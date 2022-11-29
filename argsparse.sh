@@ -1751,7 +1751,7 @@ else
 	argsparse_parse_options "$@";
 	local __argument_identifier __argument_identifier_stripped __argument_identifier_value;
 	local __eval_option_string
-	for __argument_identifier in "${!program_options[@]}"; do
+	for __argument_identifier in "${!__argsparse_options_descriptions[@]}"; do
 		__argument_identifier_stripped="${__argument_identifier//-/_}"
 		__argument_identifier_value="${program_options[${__argument_identifier}]}"
 		if argsparse_has_option_property "$__argument_identifier" value; then
